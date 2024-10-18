@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de la Consulta</title>
+</head>
+<body>
+    <h1>Resultados de la Consulta</h1>
+
+    {% if bot_response %}
+        <h2>Respuesta del Bot</h2>
+        <p>{{ bot_response }}</p>
+    {% endif %}
+
+    {% if profile_image %}
+        <h2>Foto del Perfil</h2>
+        <img src="/media/profile_image.jpg" alt="Foto de perfil" style="width:150px; height:150px;">
+    {% endif %}
+
+    <!-- Botón para regresar a la página principal -->
+    <br>
+    <a href="/" style="text-decoration: none;">
+        <button type="button">Volver a la Página Principal</button>
+    </a>
+</body>
+</html>

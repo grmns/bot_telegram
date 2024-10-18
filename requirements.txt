@@ -1,0 +1,9 @@
+asgiref==3.8.1
+Django==5.1.2
+psycopg2==2.9.10
+pyaes==1.6.1
+pyasn1==0.6.1
+rsa==4.9
+sqlparse==0.5.1
+Telethon==1.37.0
+tzdata==2024.2

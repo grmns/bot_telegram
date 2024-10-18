@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultar DNI</title>
+</head>
+<body>
+    <h1>Consultar DNI</h1>
+
+    {% if user.is_authenticated %}
+        <p>Bienvenido, {{ user.username }}!</p>
+
+        <form action="/send_command/" method="POST">
+            {% csrf_token %}
+            <label for="dni">Ingrese DNI:</label>
+            <input type="text" id="dni" name="dni" placeholder="Ingrese el DNI" required>
+            <button type="submit">Consultar</button>
+        </form>
+
+        <!-- Botón para cerrar sesión -->
+        <form action="{% url 'logout' %}" method="POST">
+            {% csrf_token %}
+            <button type="submit">Cerrar sesión</button>
+        </form>
+    {% else %}
+        <p>No estás autenticado. <a href="{% url 'login' %}">Inicia sesión</a> o <a href="{% url 'register' %}">Regístrate</a></p>
+    {% endif %}
+</body>
+</html>
